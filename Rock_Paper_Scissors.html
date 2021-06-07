@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+
+<html class = "center">
+    <head>
+
+        <title> Rock Paper Scissors </title>
+    
+        <meta http-equiv='Content-Type' content='text/html;charset=utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+        <link rel = "stylesheet" href = "Rock_Paper_Scissors.css">
+        <script src = "Rock_Paper_Scissors.js" defer> </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+     
+    </head>
+
+    <body>
+        <div id = "Rock-Paper-Scissors">
+
+            <header>
+                <div class = "name-logo">
+                    <img class = "column left" alt = "Game Logo" src = "./Icons/RPS_Game_Logo.png" width = 100 height = 200 />
+                    <h1 class = "column right"> Welcome to the Rock Paper Scissors Game!!! </h1>
+                </div>
+            </header>
+
+            <div>
+                <fieldset class = "gameDirections" v-if = "displayInstructions">
+                    <legend> <h3> How to Play: </h3> </legend>
+
+                    <h5 class = "directions"> 
+                        Choose one of the following by clicking on its icon: ROCK, PAPER, or SCISSORS and see if you can win against the computer!
+                        <br><br>
+                        *** Remember *** <br>
+                        <br> ROCK wins over SCISSORS <br> PAPER wins over ROCK <br> SCISSORS wins over PAPER <br>
+                    </h5>
+
+                    <div>
+                        <p> *********************************************************** </p>
+                        <p> Please select how many games you would like to play: </p>
+                        <a href = "#Rock-Paper-Scissors"> <button class = "gameNumber" v-on:click = 'setGameNumber(1)'> 1 Game</button> </a>
+                        <a href = "#Rock-Paper-Scissors"> <button class = "gameNumber" v-on:click = 'setGameNumber(3)'> Best of 3 </button> </a>
+                        <a href = "#Rock-Paper-Scissors"> <button class = "gameNumber" v-on:click = 'setGameNumber(5)'> Best of 5 </button> </a>
+                        <a href = "#Rock-Paper-Scissors"> <button class = "gameNumber" v-on:click = 'setGameNumber(7)'> Best of 7 </button> </a>
+                    </div> <br>
+                    
+                </fieldset>
+                
+                <div class = "RPS-Icons" v-if = "startGame">
+
+                    <a href = "#Rock-Paper-Scissors"> <button id = "resetGame" class = "resetGame" v-on:click = "resetGame()" v-if = "startGame"> Reset Game </button> </a>
+
+                    <h3 id = "roundNumber" class = "roundNumber" v-if = "displayCurrentGameNumber"> Round {{ currentGameNumber }} </h3>
+                    <h3 id = "roundNumber" class = "roundNumber" v-if = "oneGameHeader"> Choose Rock, Paper, or Scissors! </h3>
+
+                    <div class = "icons">
+                        <img class = "column part1" alt = "Rock Icon" src = "./Icons/Rock.png" width = 250 height = 175 />
+                        <img class = "column part2" alt = "Paper Icon" src = "./Icons/Paper.png" width = 250 height = 175 />
+                        <img class = "column part3" alt = "Scissors Icon" src = "./Icons/Scissors.png" width = 250 height = 175 />
+                    </div>
+
+                    <a href = "#roundNumber"> <button class = "gameIcon" v-on:click = 'determineRoundWinner("ROCK")'> Rock </button> </a>
+                    <a href = "#roundNumber"> <button class = "gameIcon" v-on:click = 'determineRoundWinner("PAPER")'> Paper </button> </a>
+                    <a href = "#roundNumber"> <button class = "gameIcon" v-on:click = 'determineRoundWinner("SCISSORS")'> Scissors </button> </a>
+                </div>
+
+                <div class = "results" v-if = "currentRoundResults">
+                    <div class = "center"> 
+                        The results are in!!! <br><br> {{ winnerMessage }}
+                    </div>
+
+                    <a href = "#Rock-Paper-Scissors"> <button v-if = "nextRoundButton" v-on:click = "resetRound()"> Next Round </button> </a>
+                    <a href = "#finalResults"> <button v-if = "finalResultsButton" v-on:click = "displayFinalResults()"> Get Final Results! </button> </a>
+                </div>
+
+                <div id = "finalResults" class = "finalResults" v-if = "finalResults">
+
+                    <div class = "center"> 
+                        <p class = "finalResultsHeader"> FINAL RESULTS!!! </p>
+
+                        <p> Your Score: {{ userScore }} Computer Score: {{ computerScore }} </p>
+
+                        <p> {{ finalResultsMessage }} </p>
+
+                        <p> Had fun? To play again, simply click the Reset Button in the top right corner! </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <footer>
+                <h3> &copy; 2021 Devorah Levi  &ensp; |  &ensp; All Rights Reserved </h3>
+            </footer>
+
+        </div>
+    </body>
+
+</html>

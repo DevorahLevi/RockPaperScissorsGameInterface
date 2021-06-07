@@ -1,0 +1,151 @@
+html {
+    color: white;
+    background-color: rgb(65, 61, 65);
+    font-weight: bold;
+    padding: 30px;
+    scroll-behavior: smooth;
+}
+
+.center {
+    text-align: center;
+}
+
+body {
+    font-family: "Lucida Calligraphy", Roboto, Helvetica, Arial, "sans-serif";
+    text-shadow: 3px 3px 2px black;
+}
+
+.name-logo {
+    border-bottom: rgb(247, 157, 172) dotted 15px;
+    filter: drop-shadow(2px 2px 2px black);
+}
+
+.name-logo:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column {
+    float: left;
+}
+
+.left {
+    width: 25%;
+
+}
+
+.right {
+    width: 75%;
+    text-align: left;
+}
+
+.resetGame {
+    margin: 0px 0px 0px 1150px;
+    font-size: 12px;
+}
+
+h1 {
+    padding-top: 35px;
+    font-size: 60px;
+    font-family: "Monotype Corsiva", Roboto, Helvetica, Arial, "sans-serif";
+}
+
+fieldset {
+    margin: auto;
+    width: 900px;
+    font-size: 28px;
+    border-radius: 15px;
+    box-shadow: 1px 2px 4px black;
+    border: 3px solid white;
+    color: rgb(247, 157, 172);
+}
+
+legend {
+    color: white;
+}
+
+button {
+    margin: 30px 5px;
+    padding: 10px 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    text-shadow: 2px 2px 2px black;
+    background-color: rgb(53, 51, 53);
+    border: 2.5px solid white;
+    border-radius: 30px;
+    box-shadow: 3px 3px 6px black;
+    transition-property: background-color, color, text-decoration, text-shadow;
+    transition-duration: 200ms;
+}
+
+button:hover {
+    color: rgb(53, 51, 53);
+    background-color: white;
+    border: 2.5px solid rgb(117, 115, 117);
+    text-shadow: .4px .4px 1px black;
+    cursor: pointer;
+}
+
+button:disabled:hover {
+    color: white;
+    background-color: rgb(53, 51, 53);
+    border: 2.5px solid white;
+    text-shadow: 2px 2px 2px black;
+    cursor: default;
+}
+
+.RPS-Icons {
+    margin: 50px;
+    margin-bottom: 20px;
+}
+
+.part1, .part2, .part3 {
+    width: 20%;
+    padding: 20px 50px;
+}
+
+.icons {
+    margin: auto;
+    padding: 0px 250px;
+}
+
+.icons:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.gameIcon {
+    margin: 20px 75px;
+}
+
+.results, .finalResults {
+    padding: 40px 30px 25px 30px;
+    margin: auto;
+    border: 10px double rgb(247, 157, 172);
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px black;
+    width: 500px;
+    font-size: 20px;
+}
+
+.roundNumber {
+    font-size: 40px;
+    text-decoration: underline;
+    font-style: italic;
+    margin: 20px;
+}
+
+.finalResultsHeader {
+    text-decoration: underline;
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 30px;
+    color: rgb(247, 157, 172)
+}
+
+footer {
+    text-align: right;
+}
